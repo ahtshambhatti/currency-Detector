@@ -1,4 +1,4 @@
-# Bubble Sort Algorithm
+# Merge Sort Algorithm
 import time 
 def MinMidMax(inputArray):
     return Min(inputArray),median(inputArray),Max(inputArray)

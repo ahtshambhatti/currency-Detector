@@ -1,4 +1,4 @@
-# Indian paper currency detection using ```opencv3``` and ```python3```
+# Saudi paper currency detection using ```opencv3``` and ```python3```
 
 To run do
 ```python3 detect.py```

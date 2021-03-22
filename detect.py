@@ -14,7 +14,7 @@ max_kp = 0
 orb = cv2.ORB_create()
 # orb is an alternative to SIFT
 
-test_img = read_img('files/riyal20f.jpeg')
+test_img = read_img('Training/Fifty riyals/Fifty riylas(2).jpg')
 # test_img = read_img('files/test_50_2.jpg')
 # test_img = read_img('files/test_20_2.jpg')
 #test_img = read_img('files/test_100_3.jpg')
@@ -28,7 +28,7 @@ display('original', original)
 # (kp1, des1) = orb.detectAndCompute(test_img, None)
 (kp1, des1) = orb.detectAndCompute(test_img, None)
 
-training_set = ['files/riyal20f.jpeg', 'files/50.jpg', 'files/100.jpg', 'files/500.jpg']
+training_set = ['Training/Five hundred riyals/Five hundred riyal(1).jpg','Training/Five hundred riyals/Five hundred riyal(2).jpg','Training/Five hundred riyals/Five hundred riyal(3).jpg','Training/Five hundred riyals/Five hundred riyal(4).jpg','Training/Fifty riyals/Fifty riylas(3).jpg', 'Training/Fifty riyals/Fifty riylas(2).jpg', 'Training/Fifty riyals/Fifty riylas(3).jpg', 'Training/Fifty riyals/Fifty riylas(4).jpg']
 
 for i in range(0, len(training_set)):
 	# train image

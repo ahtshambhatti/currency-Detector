@@ -1,8 +1,8 @@
 #!usr/bin/env python
-# @Date:	20-MAR-2021
+# @Date:	21-MAR-2021
 
-# UE14CS348 Digital Image Processing Mini Project
-# Indian paper currency detection
+# Digital Image Processing Mini Project
+# Saudi paper currency detection
 
 # utils.py
 # contains utility functions

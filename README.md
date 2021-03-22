@@ -7,7 +7,7 @@ To set a different image modify the ```testing_image``` in detect.py
 
 The failed parts are in try.py
 
-UE14CS348 course - mini project  
+mini project  
 Digital Image Processing  
 
 

@@ -1,5 +1,5 @@
-#!/usr/bin/python
-# @Date: 	2017-03-22
+#!usr/bin/env python
+# @Date:	21-MAR-2021
 
 # test file
 # TODO:
@@ -7,8 +7,7 @@
 #	Figure out testing data warping
 # 	Use webcam as input
 # 	Figure out how to use contours
-# 		Currently detects inner rect -> detect outermost rectangle
-# 	Try using video stream from android phone
+# 	Currently detects inner rect -> detect outermost rectangle
 
 
 from utils import *

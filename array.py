@@ -18,12 +18,36 @@ def Max(inputArray):
     return max
 
 def sortElements(inputArray):
-    for i in range(0, len(inputArray)):
-        for j in range(i+1,len(inputArray)):
-            if inputArray[i] > inputArray[j]:
-                k = inputArray[i]
-                inputArray[i] = inputArray[j]
-                inputArray[j] = k
+    if len(inputArray) > 1:
+        # Finding the mid of the array
+        mid = len(inputArray)//2
+        # Dividing the array elements
+        L = inputArray[:mid]
+        # into 2 halves
+        R = inputArray[mid:]
+        # Sorting the first half
+        sortElements(L)
+        # Sorting the second half
+        sortElements(R)
+        i = j = k = 0
+        # Copy data to temp arrays L[] and R[]
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                inputArray[k] = L[i]
+                i += 1
+            else:
+                inputArray[k] = R[j]
+                j += 1
+                k += 1
+        # Checking if any element was left
+        while i < len(L):
+            inputArray[k] = L[i]
+            i += 1
+            k += 1
+        while j < len(R):
+            inputArray[k] = R[j]
+            j += 1
+            k += 1
     
 def median(inputArray):
     sortElements(inputArray)
@@ -33,15 +57,11 @@ def median(inputArray):
         med = (inputArray[int(n/2)]+inputArray[int((n/2)-1)])/2
     else:
         med = inputArray[int((n-1)/2)]     
-    return med   
-
+    return med
 
 def measure_time(input_size):  
-    sequence = [i for i in range(input_size)] # input = a list [0,1,2,...]  
-    # print(sequence)  
-    start = time.time() # start timer  
-    # (min(sequence)) # execute the function with the sequence  
-    # (MinMidMax(sequence)) # execute the function with the sequence  
+    sequence = [i for i in range(input_size)] 
+    start = time.time() # start timer   
     result = MinMidMax(sequence)
     print(result)
     print("Input size=", input_size, " Time taken=", time.time()-start)  
@@ -49,8 +69,8 @@ def measure_time(input_size):
  
 if __name__ == '__main__':
     k = 1000
-    # measure_time(2*k)  
+    measure_time(2*k)  
     # measure_time(10*k)  
     # measure_time(50*k)  
-    measure_time(200*k)  
+    # measure_time(200*k)  
     # measure_time(1000*k)  

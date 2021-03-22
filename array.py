@@ -1,4 +1,4 @@
-# Merge Sort Algorithm
+# Selection Sort Algorithm
 import time 
 def MinMidMax(inputArray):
     return Min(inputArray),median(inputArray),Max(inputArray)
@@ -18,36 +18,13 @@ def Max(inputArray):
     return max
 
 def sortElements(inputArray):
-    if len(inputArray) > 1:
-        # Finding the mid of the array
-        mid = len(inputArray)//2
-        # Dividing the array elements
-        L = inputArray[:mid]
-        # into 2 halves
-        R = inputArray[mid:]
-        # Sorting the first half
-        sortElements(L)
-        # Sorting the second half
-        sortElements(R)
-        i = j = k = 0
-        # Copy data to temp arrays L[] and R[]
-        while i < len(L) and j < len(R):
-            if L[i] < R[j]:
-                inputArray[k] = L[i]
-                i += 1
-            else:
-                inputArray[k] = R[j]
-                j += 1
-                k += 1
-        # Checking if any element was left
-        while i < len(L):
-            inputArray[k] = L[i]
-            i += 1
-            k += 1
-        while j < len(R):
-            inputArray[k] = R[j]
-            j += 1
-            k += 1
+    for i in range(1, len(inputArray)): 
+        key = inputArray[i] 
+        j = i-1
+        while j >=0 and key < inputArray[j] : 
+                inputArray[j+1] = inputArray[j] 
+                j -= 1
+        inputArray[j+1] = key 
     
 def median(inputArray):
     sortElements(inputArray)

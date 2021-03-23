@@ -168,7 +168,7 @@ def fourier(image):
 
 # calculate scale and fit into display
 def display(window_name, image):
-	screen_res = 1440, 900	# MacBook Air
+	screen_res = 1180, 800	# MacBook Air
 	
 	scale_width = screen_res[0] / image.shape[1]
 	scale_height = screen_res[1] / image.shape[0]

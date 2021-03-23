@@ -6,7 +6,6 @@ from playsound import playsound
 import subprocess
 from gtts import gTTS
 
-
 max_val = 8
 max_pt = -1
 max_kp = 0
@@ -14,8 +13,9 @@ max_kp = 0
 orb = cv2.ORB_create()
 # orb is an alternative to SIFT
 
-test_img = read_img('Training/Fifty riyals/Fifty riylas(2).jpg')
-# test_img = read_img('files/test_50_2.jpg')
+    # 'Training/Ten riyals/Ten riyal(1).jpg'
+test_img = read_img('files/Ten riyal(1).jpg')
+# test_img = read_img('files/10-saudi-riyals.jpg')
 # test_img = read_img('files/test_20_2.jpg')
 #test_img = read_img('files/test_100_3.jpg')
 #test_img = read_img('files/test_20_4.jpg')
@@ -28,8 +28,67 @@ display('original', original)
 # (kp1, des1) = orb.detectAndCompute(test_img, None)
 (kp1, des1) = orb.detectAndCompute(test_img, None)
 
-training_set = ['Training/Five hundred riyals/Five hundred riyal(1).jpg','Training/Five hundred riyals/Five hundred riyal(2).jpg','Training/Five hundred riyals/Five hundred riyal(3).jpg','Training/Five hundred riyals/Five hundred riyal(4).jpg','Training/Fifty riyals/Fifty riylas(3).jpg', 'Training/Fifty riyals/Fifty riylas(2).jpg', 'Training/Fifty riyals/Fifty riylas(3).jpg', 'Training/Fifty riyals/Fifty riylas(4).jpg']
-
+training_set = [
+    'Training/Fifty riyals/Fifty riyal(1).jpg',
+    'Training/Fifty riyals/Fifty riyal(2).jpg',
+    'Training/Fifty riyals/Fifty riyal(3).jpg',
+    'Training/Fifty riyals/Fifty riyal(4).jpg',
+    'Training/Fifty riyals/Fifty riyal(5).jpg',
+    'Training/Fifty riyals/Fifty riyal(6).jpg',
+    'Training/Fifty riyals/Fifty riyal(7).jpg',
+    'Training/Fifty riyals/Fifty riyal(8).jpg',
+    'Training/Fifty riyals/Fifty riyal(9).jpg',
+    'Training/Ten riyals/Ten riyal(1).jpg',
+    'Training/Ten riyals/Ten riyal(2).jpg',
+    'Training/Ten riyals/Ten riyal(3).jpg',
+    'Training/Ten riyals/Ten riyal(4).jpg',
+    'Training/Ten riyals/Ten riyal(5).jpg',
+    'Training/Ten riyals/Ten riyal(6).jpg',
+    'Training/Ten riyals/Ten riyal(7).jpg',
+    'Training/Ten riyals/Ten riyal(8).jpg',
+    'Training/Ten riyals/Ten riyal(9).jpg',
+    'Training/Ten riyals/Ten riyal(10).jpg', 
+    'Training/One hundred riyals/One hundred riyal(1).jpg',
+    'Training/One hundred riyals/One hundred riyal(2).jpg',
+    'Training/One hundred riyals/One hundred riyal(3).jpg',
+    'Training/One hundred riyals/One hundred riyal(4).jpg',
+    'Training/One hundred riyals/One hundred riyal(5).jpg',
+    'Training/One hundred riyals/One hundred riyal(6).jpg',
+    'Training/One hundred riyals/One hundred riyal(7).jpg',
+    'Training/One hundred riyals/One hundred riyal(8).jpg',
+    'Training/One hundred riyals/One hundred riyal(9).jpg',
+    'Training/One hundred riyals/One hundred riyal(10).jpg',
+    'Training/Five hundred riyals/Five hundred riyal(1).jpg',
+    'Training/Five hundred riyals/Five hundred riyal(2).jpg',
+    'Training/Five hundred riyals/Five hundred riyal(3).jpg',
+    'Training/Five hundred riyals/Five hundred riyal(4).jpg',
+    'Training/Five hundred riyals/Five hundred riyal(5).jpg',
+    'Training/Five hundred riyals/Five hundred riyal(6).jpg',
+    'Training/Five hundred riyals/Five hundred riyal(7).jpg',
+    'Training/Five hundred riyals/Five hundred riyal(8).jpg',
+    'Training/Five hundred riyals/Five hundred riyal(9).jpg',
+    'Training/Five hundred riyals/Five hundred riyal(10).jpg',
+    'Training/Five riyals/Five riyal(1).jpg',
+    'Training/Five riyals/Five riyal(2).jpg',
+    'Training/Five riyals/Five riyal(3).jpg',
+    'Training/Five riyals/Five riyal(4).jpg',
+    'Training/Five riyals/Five riyal(5).jpg',
+    'Training/Five riyals/Five riyal(6).jpg',
+    'Training/Five riyals/Five riyal(7).jpg',
+    'Training/Five riyals/Five riyal(8).jpg',
+    'Training/Five riyals/Five riyal(9).jpg',
+    'Training/Five riyals/Five riyal(10).jpg',
+    'Training/One riyal/One riyal(1).jpg',
+    'Training/One riyal/One riyal(2).jpg',
+    'Training/One riyal/One riyal(3).jpg',
+    'Training/One riyal/One riyal(4).jpg',
+    'Training/One riyal/One riyal(5).jpg',
+    'Training/One riyal/One riyal(6).jpg',
+    'Training/One riyal/One riyal(7).jpg',
+    'Training/One riyal/One riyal(8).jpg',
+    'Training/One riyal/One riyal(9).jpg',
+    'Training/One riyal/One riyal(10).jpg',
+]
 for i in range(0, len(training_set)):
 	# train image
 	train_img = cv2.imread(training_set[i])

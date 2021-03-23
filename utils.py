@@ -1,7 +1,6 @@
-#!usr/bin/env python
 # @Date:	21-MAR-2021
 
-# Digital Image Processing Mini Project
+# Digital Image Processing Project
 # Saudi paper currency detection
 
 # utils.py

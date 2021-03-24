@@ -1,3 +1,10 @@
+# @Date:	21-MAR-2021
+
+# Digital Image Processing Project
+# Saudi paper currency detection
+
+# detect.py
+# contains Core functions
 from utils import *
 from matplotlib import pyplot as plt
 import os

@@ -8,8 +8,17 @@ To set a different image modify the ```testing_image``` in detect.py
 The failed parts are in try.py
 
 mini project  
-Digital Image Processing  
+# Digital Image Processing  
 
+To Run First install Python libraries
+
+# pip install opencv-python
+
+# pip install matplotlib
+
+# pip install numpy
+
+# pip install gtts
 
 ## TODO:
 ### 	Figure out four point transform

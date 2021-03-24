@@ -12,11 +12,34 @@ max_kp = 0
 
 orb = cv2.ORB_create()
 # orb is an alternative to SIFT
+# --------------------------------------------------------
+cap = cv2.VideoCapture(0)
 
+# # loop runs if capturing has been initialized 
+while(1): 
+
+    # reads frame from a camera 
+    ret, frame = cap.read() 
+
+    # Display the frame
+    cv2.imshow('Camera',frame) 
+
+    # Wait for 25ms
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        # saving the frame image
+        cv2.imwrite('files/frame.png', frame)
+        break
+
+# release the camera from video capture
+cap.release() 
+
+# De-allocate any associated memory usage 
+cv2.destroyAllWindows() 
+# ------------------------------------------------------------
     # 'Training/Ten riyals/Ten riyal(1).jpg'
-test_img = read_img('files/Ten riyal(1).jpg')
-# test_img = read_img('files/10-saudi-riyals.jpg')
-# test_img = read_img('files/test_20_2.jpg')
+test_img = read_img('files/frame.png')
+# test_img = read_img('files/Ten riyal(1).jpg')
+# test_img = read_img('files/20 riyals.jp eg')
 #test_img = read_img('files/test_100_3.jpg')
 #test_img = read_img('files/test_20_4.jpg')
 
@@ -120,15 +143,17 @@ if max_val != 8:
 	train_img = cv2.imread(training_set[max_pt])
 	img3 = cv2.drawMatchesKnn(test_img, kp1, train_img, max_kp, good, 4)
 	
-	note = str(training_set[max_pt])[6:-4]
-	print('\nDetected denomination: Rs. ', note)
+	note = str(training_set[max_pt]).split('/')
+
+	print('\nDetected denomination: Rs. ', note[1])
 
 	audio_file = 'audio/{}.mp3'.format(note)
-	#audio_file = "value.mp3"
-	#tts = gTTS(text=speech_out, lang="en")
-	#tts.save(audio_file)
-	#return_code = subprocess.call(["afplay", audio_file])
-	#playsound(audio_file)
+	audio_file = "value.mp3"
+	tts = gTTS(text=note[1], lang="en")
+	tts.save('audio/' + audio_file)
+	# return_code = subprocess.call(["afplay", audio_file]) not working
+    # without upper line code works properly  
+	playsound(audio_file)
 	(plt.imshow(img3), plt.show())
 
 else:

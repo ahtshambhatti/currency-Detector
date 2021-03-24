@@ -12,13 +12,13 @@ mini project
 
 To Run First install Python libraries
 
-# pip install opencv-python
+#### pip install opencv-python
 
-# pip install matplotlib
+#### pip install matplotlib
 
-# pip install numpy
+#### pip install numpy
 
-# pip install gtts
+#### pip install gtts
 
 ## TODO:
 ### 	Figure out four point transform

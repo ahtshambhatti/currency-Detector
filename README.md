@@ -22,8 +22,8 @@ To Run First install Python libraries
 
 ## TODO:
 ### 	Figure out four point transform
-###	Figure out testing data warping
-### 	Use webcam as input
-### 	Figure out how to use contours
-### 		Currently detects inner rect -> detect outermost rectangle
-### 	Try using video stream from android phone
+##	Figure out testing data warping
+## 	Use webcam as input
+## 	Figure out how to use contours
+## 		Currently detects inner rect -> detect outermost rectangle
+## 	Try using video stream from android phone

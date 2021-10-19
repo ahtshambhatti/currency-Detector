@@ -44,9 +44,9 @@ cap.release()
 cv2.destroyAllWindows() 
 # ------------------------------------------------------------
     # 'Training/Ten riyals/Ten riyal(1).jpg'
-test_img = read_img('files/frame.png')
+# test_img = read_img('files/frame.png')
 # test_img = read_img('files/Ten riyal(1).jpg')
-# test_img = read_img('files/20 riyals.jp eg')
+test_img = read_img('files/20 riyals.jpeg')
 #test_img = read_img('files/test_100_3.jpg')
 #test_img = read_img('files/test_20_4.jpg')
 
